@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>OS SYSTEM APP</title>
+</head>
+<body>
+    <section class="container">
+        <h1 class="title">OS SYSTEM APP 🖥️</h1>
+        <div class="content">
+            <h2 class="subtitle">Conoce tu Sistema Operativo:</h2>
+            <div class="content-info">
+                <ul class="main-menu">
+                    <li class="main-menu__item">Nombre del sistema:<span class="server-info"> <%= osInfo.nameOS %> </span></li>
+                    <li class="main-menu__item">Plataforma del sistema: <span class="server-info"> <%= osInfo.platformOS %> </span></li>
+                    <li class="main-menu__item">Arquitectura de ordenador: <span class="server-info"> <%= osInfo.archOS %> bits </span></li>
+                    <li class="main-menu__item">Version del sistema operativo: <span class="server-info"> <%= osInfo.releaseOS %> </span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
