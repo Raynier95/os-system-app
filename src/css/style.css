@@ -14,32 +14,51 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-.title{
-    font-size: 4rem;
+.title,
+.paragraph{
     text-align: center;
-    color: #fff;
+    color: #f7f7f7;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.content{
-    width: 100%;
-    height: 495px;
-    background-color: #eeeeee;
-    margin-top: 40%;
-    border-radius: 10px;
+.title{
+    font-size: 4rem;
 }
-.subtitle{
-    text-align: center;
-    font-size: 1.8rem;
-    padding-top: 3rem;
-}
-.content-info{
-    margin-top: 20%;
-}
-.main-menu{
-    padding-left: 0;
-}
-.main-menu__item{
-    list-style: none;
-    padding: 1rem;
+.paragraph{
     font-size: 1.2rem;
+    padding: 0px .5rem;
+}
+.general-content{
+    width: 100%;
+    height: auto;
+    margin-top: 40%;
+}
+.content-osInfo,
+.content-cpuInfo,
+.content-memoryInfo,
+.content-netInfo{
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.content-cpuInfo,
+.content-memoryInfo,
+.content-netInfo{
+    margin-top: 5rem;
+}
+.os-subtitle,
+.cpu-subtitle,
+.memory-subtitle,
+.net-subtitle{
+    padding: 2rem;
+    color: rgb(0, 114, 61);
+}
+.os-paragraph,
+.cpu-paragraph,
+.memory-paragraph,
+.net-paragraph{
+    font-size: 1.1rem;
+    padding-top: 1rem;
+    padding-left: 2rem;
 }

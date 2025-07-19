@@ -1,8 +1,7 @@
 import express from 'express'
-import ejs from 'ejs'
-import os, { platform } from 'os'
 import path, { join } from 'path'
 import { fileURLToPath } from 'url';
+import si, { osInfo } from 'systeminformation'
 
 
 const app = express()
@@ -15,18 +14,25 @@ app.set('views', path.join(__dirname, './src/view'));
 
 app.use(express.static(path.join(__dirname,'src')))
 
-app.get('/',(req,res)=>{
-    
-    const osInfo = {
-        nameOS: os.type(),
-        platformOS: os.platform(),
-        archOS: os.arch(),
-        releaseOS: os.release(),
-    }
-    res.render('index',{osInfo: osInfo })
+app.get('/', async (req,res)=>{
+    try{
+        const cpuInfo = await si.cpu()
+        const memoryInfo = await si.mem()
+        const typeMemory = await si.memLayout()
+        const osInfo = await si.osInfo()
+        const nameOsInfo = await si.users()
+        const newtworkInfo = await si.networkInterfaces()
 
+        res.render('index',{osInfo,cpuInfo,memoryInfo,typeMemory,osInfo,nameOsInfo,newtworkInfo})
+    }catch(e){
+        console.log(e)
+        res.status(500).send(`Error al solicitar información del sistema`)
+    }    
 })
 
+app.use((req,res)=>{
+    res.status(400).end(`<h1>ERROR 404 NOT FOUND</h1>`)
+})
 
 const PORT = process.env.PORT || 3000
 
