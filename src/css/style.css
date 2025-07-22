@@ -14,6 +14,9 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.header{
+    padding-top: 5rem;
+}
 .title,
 .paragraph{
     text-align: center;
@@ -24,20 +27,21 @@ body{
     font-size: 4rem;
 }
 .paragraph{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 0px .5rem;
 }
 .general-content{
     width: 100%;
     height: auto;
-    margin-top: 40%;
+    margin-top: 50%;
+    padding-bottom: 5rem;
 }
 .content-osInfo,
 .content-cpuInfo,
 .content-memoryInfo,
 .content-netInfo{
     width: 100%;
-    height: 450px;
+    height: 420px;
     border-radius: 10px;
     background-color: #f7f7f7;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -53,12 +57,66 @@ body{
 .net-subtitle{
     padding: 2rem;
     color: rgb(0, 114, 61);
+    text-decoration: underline;
 }
 .os-paragraph,
 .cpu-paragraph,
 .memory-paragraph,
 .net-paragraph{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding-top: 1rem;
+}
+.color-paragraph{
+    color: rgb(27, 27, 27);
+}
+.os-card,
+.cpu-card,
+.memory-card,
+.net-card{
+    width: 100%;
+    height: auto;
+    padding-bottom: 1rem;
     padding-left: 2rem;
+    padding-right: 2rem;
+}
+.wrapper-os,
+.wrapper-memory{
+    outline: 1px solid rgb(0, 114, 61);
+    background-color: rgba(0, 114, 61, 0.8);
+    color: #f7f7f7;
+    padding: .5rem;
+    border-radius: 5px;
+    margin-left: .2rem;
+}
+@media(1000px <= width <= 1400px){
+    .container{
+        margin-top: .5rem;
+    }
+    .general-content{
+        margin-top: 10%;
+    }
+    .content-top,
+    .content-down{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .content-down{
+        margin-top: 2rem;
+    }
+    .content-osInfo,
+    .content-cpuInfo,
+    .content-memoryInfo,
+    .content-netInfo{
+        width: 30%;
+    }
+    .content-cpuInfo{
+        margin-top: 0px;
+    }
+    .content-osInfo,
+    .content-memoryInfo{
+        margin-right: 5%;
+    }
 }

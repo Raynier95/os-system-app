@@ -13,35 +13,47 @@
             <p class="paragraph">Información detallada sobre los componentes y capacidades de tu ordenador</p>
         </header>
         <div class="general-content">
-              <article class="content-osInfo">
-                <h2 class="os-subtitle">Arquitectura del sistema</h2>
-                <p class="os-paragraph">Plataforma: <%= osInfo.platform %> </p>
-                <p class="os-paragraph">Arquitectura: <%= osInfo.arch %> Bits</p>
-                <p class="os-paragraph">Usuario: <%= nameOsInfo[0].user %></p>
-            </article>
+            <div class="content-top">
+                <article class="content-osInfo">
+                    <h2 class="os-subtitle">Arquitectura del sistema</h2>
+                        <div class="os-card">
+                            <p class="os-paragraph">Sistema Operativo: <span class="wrapper-os top"> <%= osInfo.platform %> </span></p>
+                            <p class="os-paragraph">Arquitectura: <span class="wrapper-os"> <%= osInfo.arch %> Bits</span></p>
+                            <p class="os-paragraph">Nombre de Usuario: <span class="wrapper-os"> <%= nameOsInfo[0].user %></span></p>
+                        </div>
+                </article>
 
-            <article class="content-cpuInfo">
-                <h2 class="cpu-subtitle">Características del procesador</h2>
-                <p class="cpu-paragraph">Fabricante: <%= cpuInfo.manufacturer %> </p>
-                <p class="cpu-paragraph">Versión del procesador: <%= cpuInfo.brand %> </p>
-                <p class="cpu-paragraph">Velocidad del procesador: <%= cpuInfo.speed %> GHz </p>
-            </article>
+                <article class="content-cpuInfo">
+                    <h2 class="cpu-subtitle">Características del procesador</h2>
+                        <div class="cpu-card">
+                            <p class="cpu-paragraph">Fabricante: <span class="wrapper-cpu"> <%= cpuInfo.manufacturer %> </span> </p>
+                            <p class="cpu-paragraph">Versión del procesador: <span class="wrapper-cpu"> <%= cpuInfo.brand %></span></p>
+                            <p class="cpu-paragraph">Velocidad del procesador: <span class="wrapper-cpu"> <%= cpuInfo.speed %> GHz</span></p>
+                        </div>
+                </article>
+            </div>
 
-            <article class="content-memoryInfo">
-                <h2 class="memory-subtitle">Memoria del sistema</h2>
-                <p class="memory-paragraph">Memoria total: <%= Math.round(memoryInfo.total / (1024 * 1024 * 1024).toFixed()) %> GB</p>
-                <p class="memory-paragraph">Memoria libre: <%= (memoryInfo.free / (1024 * 1024 * 1024)).toFixed(2) %> GB</p>
-                <p class="memory-paragraph">Memoria usada: <%= (memoryInfo.used / (1024 * 1024 * 1024)).toFixed(2) %> GB</p>
-                <p class="memory-paragraph">Tipo de memoria usada: <%= typeMemory[0].type %> </p>
-            </article> 
+            <div class="content-down">
+                <article class="content-memoryInfo">
+                    <h2 class="memory-subtitle">Memoria RAM del sistema</h2>
+                        <div class="memory-card">
+                            <p class="memory-paragraph">Memoria total: <span class="wrapper-memory"> <%= Math.round(memoryInfo.total / (1024 * 1024 * 1024).toFixed()) %> GB</span> </p>
+                            <p class="memory-paragraph">Memoria libre: <span class="wrapper-memory">  <%= (memoryInfo.free / (1024 * 1024 * 1024)).toFixed(2) %> GB</span></p>
+                            <p class="memory-paragraph">Memoria usada: <span class="wrapper-memory">  <%= (memoryInfo.used / (1024 * 1024 * 1024)).toFixed(2) %> GB</span></p>
+                            <p class="memory-paragraph">Tipo de memoria usada: <span class="wrapper-memory"> <%= typeMemory[0].type %> </span> </p>
+                        </div>
+                </article> 
 
-            <article class="content-netInfo">
-                <h2 class="net-subtitle">Especificaciones de red</h2>
-                <p class="net-paragraph">IPv4: <%= newtworkInfo[0].ip4 %> </p>
-                <p class="net-paragraph">Interfaz: <%= newtworkInfo[0].iface %> </p>
-                <p class="net-paragraph">Nombre de la interfaz de red: <%= newtworkInfo[0].ifaceName %> </p>
-                <p class="net-paragraph">Velocidad: <%= newtworkInfo[0].speed %> MBit/s</p>
-            </article>
+                <article class="content-netInfo">
+                    <h2 class="net-subtitle">Especificaciones de red</h2>
+                        <div class="net-card">
+                            <p class="net-paragraph">IPv4: <span class="wrapper-net"> <%= newtworkInfo[0].ip4 %></span> </p>
+                            <p class="net-paragraph">Interfaz: <span class="wrapper-net"> <%= newtworkInfo[0].iface %> </span> </p>
+                            <p class="net-paragraph">Nombre de la interfaz de red: <span class="wrapper-net"> <%= newtworkInfo[0].ifaceName %> </span></p>
+                        </div>
+                </article>
+            </div>
+
         </div>
     </section>
 </body>
