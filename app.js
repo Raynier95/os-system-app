@@ -12,7 +12,9 @@ const __dirname = path.dirname(__filename);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/view'));
 
+
 app.use(express.static(path.join(__dirname,'src')))
+
 
 app.get('/', async (req,res)=>{
     try{
@@ -20,7 +22,7 @@ app.get('/', async (req,res)=>{
         const memoryInfo = await si.mem()
         const typeMemory = await si.memLayout()
         const osInfo = await si.osInfo()
-        const nameOsInfo = await si.users()
+        const nameOsInfo = await si.users() 
         const newtworkInfo = await si.networkInterfaces()
 
         res.render('index',{osInfo,cpuInfo,memoryInfo,typeMemory,osInfo,nameOsInfo,newtworkInfo})
@@ -30,8 +32,12 @@ app.get('/', async (req,res)=>{
     }    
 })
 
+// app.use((req,res)=>{
+//     res.status(404).render(path.join(__dirname, './src/view/404.ejs'))
+// })
+
 app.use((req,res)=>{
-    res.status(400).end(`<h1>ERROR 404 NOT FOUND</h1>`)
+    res.status(404).sendFile(process.cwd() + '/src/view/404.html')
 })
 
 const PORT = process.env.PORT || 3000
